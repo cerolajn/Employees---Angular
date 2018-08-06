@@ -1,0 +1,73 @@
+<head>
+  <!--=========================================META TAGS===========================================-->
+  <title>Employees List</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+<!--==========================================CONTENT CONTAINER==========================================-->
+<div class="content__container">
+  <!--======================TABLE CONTAINER================================-->
+  <div class="table__container">
+    <!--======================TABLE HEADER================================-->
+    <header class ="table__header">
+      <img class ="table__header--logo" src="../../assets/icons/icon - pracownicy.svg" alt="employees_logo"/>
+      <h1 class ="table__header--title">Lista Pracowników</h1>
+    </header>
+    <div class="table__shadow"></div>
+    <div class="table__wrapper">
+      <table class="table__skeleton">
+        <thead class="tableHeader">
+        <tr class="tableHeader__container">
+          <th class="tableHeader__container--id" [class.active]="order === 'id'" (click)="setOrder('id')">iD
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+          </th>
+          <th class="tableHeader__container--firstName" [class.active]="order === 'firstName'" (click)="setOrder('firstName')">First Name
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+          </th>
+          <th class="tableHeader__container--lastName" [class.active]="order === 'lastName'" (click)="setOrder('lastName')">Last Name
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+          </th>
+          <th class="tableHeader__container--birth" [class.active]="order === 'dateOfBirth'" (click)="setOrder('dateOfBirth')">Birth date
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+          </th>
+          <th class="tableHeader__container--company" [class.active]="order === 'company'" (click)="setOrder('company')">Company
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+          </th>
+          <th class="tableHeader__container--note" [class.active]="order === 'note'" (click)="setOrder('note')">Note
+            <span [hidden]="reverse">▼</span>
+            <span [hidden]="!reverse">▲</span>
+          </th>
+        </tr>
+        </thead>
+        <!--======================TABLE BODY================================-->
+        <tbody class="tableBody">
+        <tr class="tableBody__container" *ngFor="let employee of employees | orderBy: order:reverse:'case-insensitive'| paginate: { itemsPerPage: 5, currentPage: currentP }" >
+          <td class="tableBody__container--id">{{ employee.id}}</td>
+          <td class="tableBody__container--firstName">{{ employee.firstName}}</td>
+          <td class="tableBody__container--lastName">{{ employee.lastName}}</td>
+          <td class="tableBody__container--birth">{{ employee.dateOfBirth}}</td>
+          <td class="tableBody__container--company">{{ employee.company}}</td>
+          <td class="tableBody__container--note">{{ employee.note}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <!--======================PAGINATION================================-->
+      <div class="table__pagination">
+        <pagination-controls class="pagination-label" (pageChange)="currentP = $event"></pagination-controls>
+      </div>
+    </div>
+    <!--======================FOOTER================================-->
+    <footer class="table__footer">
+      <img class ="table__footer--icon" src="../../assets/icons/chilid-logo.svg" alt="company_logo"/>
+    </footer>
+  </div>
+</div>
+<router-outlet></router-outlet>
+</body>

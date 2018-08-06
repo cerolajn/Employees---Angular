@@ -1,0 +1,323 @@
+/*[ FONT ]*/
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../../assets/fonts/Open_Sans/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url('../../assets/fonts/Open_Sans/OpenSans-Bold.ttf');
+}
+
+/*[ CONTENT CONTAINER ]*/
+
+.content__container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+/*[ TABLE CONTAINER ]*/
+
+.table__container {
+  background-color: #3e9df5;
+  padding: 10px 10px;
+  min-height: 100vh;
+  width: 100%;
+
+  /*[FLEXBOX]*/
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*[TABLE HEADER]*/
+
+.table__header {
+  margin: 3% auto;
+  text-align: center;
+  width: 100%;
+}
+
+/*[TABLE HEADER TITLE]*/
+
+.table__header--title {
+  color: #FFFFFF;
+  font-family: OpenSans-Bold;
+  font-size: 43px;
+  letter-spacing: -0.89px;
+}
+
+/*[TABLE CONTENT WRAPPER]*/
+
+.table__wrapper{
+  width:70%;
+}
+
+/*[TABLE SKELETON]*/
+
+.table__skeleton {
+  border-spacing:unset;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  -webkit-box-shadow: -1px 6px 45px -4px rgba(87,74,87,1);
+  -moz-box-shadow: -1px 6px 45px -4px rgba(87,74,87,1);
+  box-shadow: -1px 6px 45px -4px rgba(87,74,87,1);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.table__skeleton * {
+  position: relative;
+}
+.table__skeleton td, .table__skeleton th {
+  border-right: 1px solid #DAE0E9;
+  padding-left: 8px;
+  text-align:center;
+}
+
+/*[TABLE HEADER CONTAINER]*/
+
+.tableHeader__container {
+  height: 80px;
+}
+
+.tableHeader__container th {
+  background-color: #E5EEFB;
+  box-shadow: inset 0 1px 3px 0 #FFFFFF;
+  color:#3A5071;
+  font-family: OpenSans-Bold;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.66px;
+}
+
+.tableHeader__container th:hover {
+  cursor: pointer;
+}
+
+/*[TABLE BODY CONTAINER]*/
+
+.tableBody__container {
+  color:#577198;
+  height: 60px;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing:0.75px;
+}
+
+.tableBody__container:hover {
+  color:#DFE6EA;
+  cursor: pointer;
+}
+
+.tableBody__container:last-child {
+  border: 0;
+}
+
+.tableBody__container:nth-child(even) {
+   background-color:#F1F6FC;
+ }
+
+.tableBody__container:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+/*[TABLE HEADER AND BODY ROWS]*/
+
+.tableHeader__container--id,
+.tableBody__container--id {
+  font-family: OpenSans-Bold;
+  padding-left: 40px;
+  text-align: center;
+  width:5%;
+}
+
+.tableHeader__container--firstName,
+.tableBody__container--firstName {
+  font-family: OpenSans-Regular;
+  text-align: center;
+  width:10%;
+}
+
+.tableHeader__container--lastName,
+.tableBody__container--lastName {
+  font-family: OpenSans-Bold;
+  text-align: center;
+  width:10%;
+}
+
+.tableHeader__container--birth,
+.tableBody__container--birth{
+  font-family: OpenSans-Regular;
+  text-align: center;
+  width:15%;
+}
+
+.tableHeader__container--company,
+.tableBody__container--company {
+  font-family: OpenSans-Bold;
+  text-align: center;
+  width:10%;
+}
+
+.tableHeader__container--note,
+.tableBody__container--note{
+  font-family: OpenSans-Regular;
+  text-align: center;
+  width:10%;
+}
+
+/*[TABLE SHADOW]*/
+
+.table__shadow{
+  background:radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.0) 40%);
+  position:absolute;
+  top:4%;
+  height:200px;
+  width:100%;
+}
+/*[PAGINATION]*/
+
+.pagination-label /deep/ .ngx-pagination {
+  color: #577198;
+  font-family: OpenSans-Bold;
+  font-size: 15px;
+  margin:5% auto;
+  letter-spacing: 0.75px;
+  text-align: center;
+  line-height: 22px;
+}
+
+  /*[TABLE FOOTER ICON]*/
+
+.table__footer {
+  margin-bottom:1%;
+  text-align: center;
+  width: 100%;
+}
+
+.table__footer--icon {
+  height:25px;
+  width:58px;
+}
+
+/*[MEDIA QUERIES]*/
+
+@media screen and (max-width: 992px) {
+
+  /*[TABLE HEADER]*/
+
+  .table__header {
+    margin: 0 auto;
+    text-align: center;
+    height: 5%;
+    width: 100%;
+
+  }
+   .table__header--logo {
+     height:30px;
+
+   }
+  .table__header--title {
+    font-size: 17px;
+  }
+
+  /*[TABLE SKELETON]*/
+  .table__skeleton {
+    display: block;
+  }
+  table > *, table tr, table td {
+    display: block;
+  }
+
+  /*[TABLE HEAD]*/
+
+ .tableHeader {
+    height:150px;
+    width:100%;
+  }
+  .tableHeader__container th {
+    display:block;
+    height:25px;
+    font-size:10px ;
+    padding:5px 10px;
+    text-align: center;
+  }
+  /*[TABLE BODY]*/
+  .tableBody__container {
+    height:10%;
+    padding: 2px 0;
+  }
+  .tableBody__container td {
+    padding-left: 5%;
+    margin-bottom: 5px;
+  }
+  .tableBody__container td:last-child {
+    margin-bottom: 0;
+  }
+  .tableBody__container td:before {
+    font-size: 10px;
+    line-height: 1;
+    position: absolute;
+    width: 100%;
+    left: 20px;
+    top: 0;
+  }
+
+
+  .tableHeader__container--birth,
+  .tableBody__container--birth,
+  .tableHeader__container--company,
+  .tableBody__container--company,
+  .tableHeader__container--note,
+  .tableBody__container--note,
+  .tableHeader__container--id,
+  .tableBody__container--id,
+  .tableHeader__container--firstName,
+  .tableBody__container--firstName,
+  .tableHeader__container--lastName,
+  .tableBody__container--lastName {
+    text-align: center;
+    width: 100%;
+  }
+
+  .tableBody__container {
+    font-size: 10px;
+  }
+
+  /*[TABLE SHADOW]*/
+  .table__shadow{
+  background:radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.0) 40%);
+  position:absolute;
+  top:3%;
+  height:50px;
+  width:100%;
+  }
+
+  /*[PAGINATION]*/
+  .pagination-label /deep/ .ngx-pagination {
+    margin:3% auto;
+    font-size:8px;
+  }
+  /*[TABLE FOOTER]*/
+  .table__footer--icon {
+    width:58px;
+    height:10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .table__container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
